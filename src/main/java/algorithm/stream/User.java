@@ -1,7 +1,11 @@
 package algorithm.stream;
 
 import java.util.Objects;
-
+/**
+ * @description 
+ * @author gaolei
+ * @date 2020/11/23 9:58
+ */
 public class User {
     private String name;
     private int age;

@@ -1,6 +1,11 @@
 package algorithm.stream;
 import java.util.*;
 
+/**
+ * @description
+ * @author gaolei
+ * @date 2020/11/23 9:57
+ */
 public class StreamTest {
     public static void main(String[] args) {
         List<User> list = Arrays.asList(
@@ -19,7 +24,7 @@ public class StreamTest {
         testDistinct(list);
     }
 
-    public static void testDistinct(List<User> list){
+    public static void testDistinct(List<User> list) {
         //list去重
         List<User> users = new ArrayList(list);
         System.out.println("------去重前--------");
@@ -34,41 +39,41 @@ public class StreamTest {
                 }
             }
         }
-        for (User user: users) {
+        for (User user : users) {
             System.out.println(user);
         }
         System.out.println("------JDK1.8 Stream------");
         list.stream().distinct().forEach(user -> System.out.println(user));
     }
 
-    public static void testLimit(List<User> list){
+    public static void testLimit(List<User> list) {
         //输出前三个数据
         System.out.println("------截断前--------");
         list.stream().forEach(user -> System.out.println(user));
         System.out.println("------截断后------");
-        for(int i=0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             System.out.println(list.get(i));
         }
         System.out.println("------Stream--------");
         list.stream().limit(3).forEach(user -> System.out.println(user));
     }
 
-    public static void testFilter(List<User> list){
+    public static void testFilter(List<User> list) {
         //输出年龄大于50的人
         System.out.println("------过滤前--------");
         list.stream().forEach(user -> System.out.println(user));
         System.out.println("------JDK1.8前------");
-        for (User user: list) {
-            if (user.getAge()>50) System.out.println(user);
+        for (User user : list) {
+            if (user.getAge() > 50) System.out.println(user);
         }
         System.out.println("------Stream--------");
         list.stream().filter((User user) -> user.getAge() > 50).forEach(user -> System.out.println(user));
     }
 
-    public static void testStreamLoop(List<User> list){
+    public static void testStreamLoop(List<User> list) {
         //Jdk1.8之前
         System.out.println("------JDK1.8前--------");
-        for (User user: list){
+        for (User user : list) {
             System.out.println(user);
         }
         //Lamda表达式

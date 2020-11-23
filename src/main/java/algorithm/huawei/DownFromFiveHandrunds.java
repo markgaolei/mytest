@@ -1,7 +1,11 @@
 package algorithm.huawei;
 
 import java.util.Scanner;
-
+/**
+ * @description 
+ * @author gaolei
+ * @date 2020/11/23 10:14
+ */
 public class DownFromFiveHandrunds {
     public static int count=1;
     public static float distance =500f;

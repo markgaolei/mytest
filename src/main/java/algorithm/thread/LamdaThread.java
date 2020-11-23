@@ -1,25 +1,29 @@
-package algorithm.Thread;
+package algorithm.thread;
 
 import java.text.SimpleDateFormat;
 import java.util.concurrent.CountDownLatch;
-
+/**
+ * @description
+ * @author gaolei
+ * @date 2020/11/23 10:03
+ */
 public class LamdaThread {
     private static int i = 0;
 
     public static void main(String[] args) {
         CountDownLatch countDownLatch = new CountDownLatch(100000);
         long startTime = System.currentTimeMillis();
-        for (i=0;i<1000;i++){
+        for (i = 0; i < 1000; i++) {
             Thread thread = new Thread(new Runnable() {
                 public void run() {
-                    System.out.println("这是第"+i+"线程");
+                    System.out.println("这是第" + i + "线程");
                 }
             });
             thread.start();
             countDownLatch.countDown();
-            try{
+            try {
                 countDownLatch.await();
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }

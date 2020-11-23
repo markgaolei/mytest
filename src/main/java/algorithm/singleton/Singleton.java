@@ -1,5 +1,9 @@
 package algorithm.singleton;
-//双重校验锁懒汉模式
+/**
+ * @description 双重校验锁懒汉模式
+ * @author gaolei
+ * @date 2020/11/23 9:58
+ */
 public class Singleton {
     private volatile static Singleton singletonInstance;
     private Singleton(){}

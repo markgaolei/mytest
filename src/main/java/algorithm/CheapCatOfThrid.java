@@ -1,7 +1,11 @@
 package algorithm;
 
 import java.util.Scanner;
-
+/**
+ * @description
+ * @author gaolei
+ * @date 2020/11/23 9:57
+ */
 public class CheapCatOfThrid {
     public static void main(String[] args) {
         int numhat = 0;

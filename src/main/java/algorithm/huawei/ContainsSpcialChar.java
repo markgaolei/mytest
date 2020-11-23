@@ -1,7 +1,11 @@
 package algorithm.huawei;
 
 import java.util.Scanner;
-
+/**
+ * @description 
+ * @author gaolei
+ * @date 2020/11/23 10:07
+ */
 public class ContainsSpcialChar {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

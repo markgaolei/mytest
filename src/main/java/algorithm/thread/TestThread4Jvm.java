@@ -1,5 +1,9 @@
-package algorithm.Thread;
-
+package algorithm.thread;
+/**
+ * @description 
+ * @author gaolei
+ * @date 2020/11/23 10:05
+ */
 public class TestThread4Jvm {
     public static void main(String[] args) {
         System.out.println("aaaaa");
