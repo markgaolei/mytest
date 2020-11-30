@@ -7,8 +7,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @description 线程
  * @author gaolei
+ * @description 线程
  * @date 2020/11/23 10:03
  */
 public class LamdaThreadTest {
@@ -39,7 +39,7 @@ public class LamdaThreadTest {
 
     @Test
     public void atomicIntegerCount() {
-        CountDownLatch  countDownLatch = new CountDownLatch(1000);
+        CountDownLatch countDownLatch = new CountDownLatch(1000);
         atomicInteger.set(i);
         for (; atomicInteger.get() < 1000; atomicInteger.getAndIncrement()) {
             Thread thread = new Thread(new Runnable() {
@@ -63,8 +63,8 @@ public class LamdaThreadTest {
         }
     }
 
-    private void runThread (int count, int countDownLatchNumber) {
-        CountDownLatch  countDownLatch = new CountDownLatch(countDownLatchNumber);
+    private void runThread(int count, int countDownLatchNumber) {
+        CountDownLatch countDownLatch = new CountDownLatch(countDownLatchNumber);
         long startTime = System.currentTimeMillis();
         for (; i < countDownLatchNumber; i++) {
             Thread thread = new Thread(new Runnable() {

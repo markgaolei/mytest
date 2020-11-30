@@ -80,5 +80,9 @@ public class MultiThreadTest {
 
         }
     }
+
+    public String runThread() {
+        return "hello world";
+    }
 }
 
