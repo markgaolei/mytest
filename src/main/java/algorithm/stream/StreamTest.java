@@ -2,7 +2,7 @@ package algorithm.stream;
 import java.util.*;
 
 /**
- * @description
+ * @description JDK1.8流操作
  * @author gaolei
  * @date 2020/11/23 9:57
  */
