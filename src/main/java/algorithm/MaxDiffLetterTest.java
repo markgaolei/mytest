@@ -11,18 +11,25 @@ import java.util.Scanner;
  */
 public class MaxDiffLetterTest {
 
+    /**
+     * 最大相同字符串
+     */
     @Test
-    public void fromMax2Min() {
-        String str = "qwerqwer";
+    public void fromMaxSameLetter() {
+        String str = "abcdefghklmnabcdefghklmn";
         int strLen = str.length();
         for (int i = strLen - 1; i < strLen; i--) {
+            // 本次比较的固定长度，即滑动窗口长度
             int fixLength = i;
             for (int j = 0; j < strLen - i; j++) {
+                // 本次比较的固定字符串
                 String fixStr = str.substring(j, fixLength + j);
-                for (int k = 1; k <= strLen - i; k++) {
-                    String compareStr = str.substring(k, fixLength + k);
+                for (int k = j+1; k <= strLen - i; k++) {
+                    // 与固定字符串比较的
+                    String compareStr = str.substring(k, k + fixLength);
                     if ((fixStr).equals(compareStr)) {
                         System.out.println("最大相同字符串是:" + fixStr + "长度是：" + fixStr.length());
+                        return;
                     }
                 }
             }
