@@ -84,8 +84,8 @@ public class BasicTest {
         System.out.println("BigDecimal比较大小a2.compareTo(b2)" + a2.compareTo(b2));
 
         // 通过 setScale方法设置保留几位小数以及保留规则
-        BigDecimal m = new BigDecimal("1.23456");
-        BigDecimal n = m.setScale(2, BigDecimal.ROUND_HALF_DOWN);
+        BigDecimal m = new BigDecimal("1.23556");
+        BigDecimal n = m.setScale(2, BigDecimal.ROUND_HALF_UP);
         System.out.println("BigDecimal设置精度以及保留规则: " + n);
         System.out.println("=========================正确示范 end============================");
     }
@@ -121,7 +121,7 @@ public class BasicTest {
         System.out.println(myArray3.length);
 
         // 问题2:Array.asList()得到的List是java.util.Arrays类的内部类ArrayList,这个类未实现AbstractList的add/remove/clear方法，所以无法使用
-        // 解决1:自己实现将数组转换为List方法
+        // 解决1:实现工具方法将数组转换为List
         List<String> list2 = arrayToList(myArray2);
         list2.add("tomato");
         System.out.println(list2.get(3));

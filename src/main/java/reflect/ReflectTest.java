@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,5 +48,25 @@ public class ReflectTest {
             }
             System.out.println(clazz.getDeclaredMethod("toString").invoke(user));
         }
+    }
+
+    @Test
+    public void simpleReflectTest() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
+        Class<?> clazz = Class.forName("algorithm.stream.User");
+        User user = (User)clazz.newInstance();
+        /**
+         * 获取指定方法
+         */
+        Method method = clazz.getDeclaredMethod("setAge", int.class);
+        method.invoke(user,2);
+        System.out.println(user.toString());
+        /**
+         * 获取指定属性并设置值
+         */
+        Field field = clazz.getDeclaredField("name");
+        // 为了对类中的参数进行修改我们取消安全检查
+        field.setAccessible(true);
+        field.set(user, "gaolei");
+        System.out.println(user.toString());
     }
 }
