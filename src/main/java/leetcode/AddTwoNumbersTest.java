@@ -6,10 +6,14 @@ import java.util.List;
 
 /**
  * @author gaolei
- * @description 记录leetcode题目
+ * @description 两数相加
+ * 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
+ * 输出：7 -> 0 -> 8
+ * 原因：342 + 465 = 807
+ *
  * @date 2020/12/21 13:33
  */
-public class Solutions {
+public class AddTwoNumbersTest {
 
     /**
      * 给定两个链表,每个节点存储一位数，求这两个链表各节点相加结果
@@ -34,7 +38,7 @@ public class Solutions {
             n++;
             q = q.nextNode;
         }
-        // 给短的链表补0
+        // 链表长度短的补0
         if (m > n) {
             for (int i = 0; i < m - n; i++) {
                 q.nextNode = new ListNode(0);
@@ -47,13 +51,13 @@ public class Solutions {
             }
         }
 
-        // 计算结果
+        // 将两个链表节点数据相加, flag表示有进位
         p = l1;
         q = l2;
         boolean flag = false; //表示进位
         ListNode midResult = l3;
         int count = 0;
-        while (p.nextNode != null && q.nextNode != null) {
+        do {
             count = p.val + q.val;
             if (flag == true) {
                 count++;
@@ -66,7 +70,7 @@ public class Solutions {
             flag =  count >= 10 ? true : false;
             p = p.nextNode;
             q = q.nextNode;
-        }
+        } while (p != null && q != null); // 此处只需要判断p是否为null就行
         return l3;
     }
 
@@ -91,7 +95,9 @@ public class Solutions {
                 default:
                     break;
             }
-            p.nextNode = new ListNode();
+            if (i < 2) {
+                p.nextNode = new ListNode();
+            }
             p = p.nextNode;
         }
         for (int j = 0; j < 3; j++) {
@@ -108,17 +114,19 @@ public class Solutions {
                 default:
                     break;
             }
-            q.nextNode = new ListNode();
+            if (j < 2) {
+                q.nextNode = new ListNode();
+            }
             q = q.nextNode;
         }
 
         ListNode result = addTwoNumbers(l1, l2);
         // 遍历结果
         ListNode x = result;
-        while (x.nextNode != null) {
+        do {
             System.out.println(x.val);
             x = x.nextNode;
-        }
+        } while (x.nextNode != null);
     }
 
     class ListNode {
