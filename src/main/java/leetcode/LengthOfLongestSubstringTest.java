@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class LengthOfLongestSubstringTest {
 
     @Test
-    public void testRun() {
+    public void testRun() throws InterruptedException {
         String s = "pwwkew";
         System.out.println(lengthOfLongestSubstring(s));
     }
@@ -23,7 +23,7 @@ public class LengthOfLongestSubstringTest {
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring(String s) throws InterruptedException {
         if (s.length() == 0) {
             return 0;
         }
@@ -39,6 +39,10 @@ public class LengthOfLongestSubstringTest {
             // 计算子串最大长度
             max = Math.max(max, i - left + 1);
         }
-        return max;
+
+        while (true) {
+            Thread.sleep(1000);
+            System.out.println("睡1秒");
+        }
     }
 }
