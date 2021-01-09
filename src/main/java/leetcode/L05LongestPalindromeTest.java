@@ -45,5 +45,4 @@ public class L05LongestPalindromeTest {
         String result = longestPalindrome(s);
         System.out.println(result);
     }
-
 }
