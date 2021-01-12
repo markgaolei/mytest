@@ -53,7 +53,7 @@ public class L08AtoiTest {
         }
         return rev;
     }
-    
+
     private int method2 (String str) {
         str = str.trim();
         if (str.length() == 0) return 0;
@@ -81,6 +81,12 @@ public class L08AtoiTest {
         System.out.println(method2(s));
     }
 
+    /**
+     * 自动机方式 确定有限状态机（deterministic finite automaton, DFA
+     *
+     * @param str
+     * @return
+     */
     private int automaton (String str) {
         Automaton automaton = new Automaton();
         int length = str.length();
