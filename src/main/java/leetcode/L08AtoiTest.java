@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author gaolei
  * @description 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
- * @date 2021/1/8 21:56
+ * @date 2021/1/12 21:56
  */
 public class L08AtoiTest {
 
@@ -57,8 +57,7 @@ public class L08AtoiTest {
     private int method2 (String str) {
         str = str.trim();
         if (str.length() == 0) return 0;
-        if (!Character.isDigit(str.charAt(0))
-                && str.charAt(0) != '-' && str.charAt(0) != '+')
+        if (!Character.isDigit(str.charAt(0)) && str.charAt(0) != '-' && str.charAt(0) != '+')
             return 0;
         int ans = 0;
         boolean neg = str.charAt(0) == '-';
